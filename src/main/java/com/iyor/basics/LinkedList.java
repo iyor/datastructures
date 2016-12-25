@@ -1,3 +1,5 @@
+package com.iyor.basics;
+
 public class LinkedList<E> {
 	private class Node {
 		
@@ -39,6 +41,7 @@ public class LinkedList<E> {
 		}
 		else{
 			last.next = n;			
+			last=last.next;
 		}
 		size++;
 		return true;
