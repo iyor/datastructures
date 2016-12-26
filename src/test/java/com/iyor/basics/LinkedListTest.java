@@ -38,4 +38,20 @@ public class LinkedListTest {
         assertTrue(ll.contains(3));
     }
 
+	@Test
+	public void removeMiddleElementTest(){
+        LinkedList<Integer> ll = new LinkedList<Integer>();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+		ll.add(4);
+		assertTrue(4==ll.size());
+		ll.remove(2);
+		assertTrue(3==ll.size());
+		assertTrue(ll.contains(1));
+		assertFalse(ll.contains(2));
+		assertTrue(ll.contains(3));
+		assertTrue(ll.contains(4));
+	}
+
 }
