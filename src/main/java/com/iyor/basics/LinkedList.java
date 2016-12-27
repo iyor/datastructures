@@ -7,10 +7,6 @@ public class LinkedList<E> {
 
 		protected Node next;
 
-		Node() {
-			this(null);
-		}
-
 		Node(E elt){
 			this.elt = elt;
 			next = null;
@@ -54,12 +50,15 @@ public class LinkedList<E> {
 			size--;
 			return true;
 		}
-		while(current.next!=null){
+		while(!current.next.equals(null)){
 			if(current.next.equals(e)){
+				if(current.next.equals(last))
+					last=current;
 				current.next = current.next.next;
 				size--;
 				return true;
 			}
+			current = current.next;
 		}
 		return false;
 	}
