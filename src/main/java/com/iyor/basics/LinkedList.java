@@ -19,7 +19,7 @@ public class LinkedList<E> {
 	}
 
 	Node first, last;
-	int size=0;
+	int size = 0;
 
 	public LinkedList(){
 		first = last = null;	
@@ -37,7 +37,7 @@ public class LinkedList<E> {
 		}
 		else{
 			last.next = n;			
-			last=last.next;
+			last = last.next;
 		}
 		size++;
 		return true;
@@ -53,7 +53,7 @@ public class LinkedList<E> {
 		while(!current.next.equals(null)){
 			if(current.next.equals(e)){
 				if(current.next.equals(last))
-					last=current;
+					last = current;
 				current.next = current.next.next;
 				size--;
 				return true;

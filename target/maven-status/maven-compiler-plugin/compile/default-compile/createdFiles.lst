@@ -1,2 +1,4 @@
 com/iyor/basics/LinkedList.class
+com/iyor/basics/Stack.class
 com/iyor/basics/LinkedList$Node.class
+com/iyor/basics/Stack$Node.class
