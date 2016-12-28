@@ -16,6 +16,10 @@ public class Stack<E> {
 
 	int size = 0;
 
+	public Stack() {
+		first=null;		
+	}
+
 	public E pop() {
 		if(first==null)
 			return null;
