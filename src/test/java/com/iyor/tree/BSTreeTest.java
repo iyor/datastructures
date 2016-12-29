@@ -40,6 +40,17 @@ public class BSTreeTest {
 	public void traversePreOrderTest(){
 		ArrayList<Integer> expected = new ArrayList<Integer>();
 		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
+
+	@Test
+	public void addDuplicate() {
+		bst.add(6);	
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
 	}
