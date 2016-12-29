@@ -20,7 +20,6 @@ public class BSTree<E extends Comparable<E>> {
 	}	
 
 	Node root;
-	int size; //unnecessary?
 
 	public BSTree(){
 		this.root = null;
@@ -38,7 +37,6 @@ public class BSTree<E extends Comparable<E>> {
 		if(comp==0) return false;
 		else if(comp<0) leaf.left = n;     
 		else if (comp>0) leaf.right = n;
-		this.size++;
 		return true;
 	}
 
