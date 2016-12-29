@@ -23,7 +23,6 @@ public class BSTree<E extends Comparable<E>> {
 
 	public BSTree(){
 		this.root = null;
-		this.size = 0;
 	}
 
 	public boolean add(E e){
