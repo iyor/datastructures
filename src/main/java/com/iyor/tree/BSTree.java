@@ -20,7 +20,7 @@ public class BSTree<E extends Comparable<E>> {
 	}	
 
 	Node root;
-	int size;
+	int size; //unnecessary?
 
 	public BSTree(){
 		this.root = null;
@@ -59,7 +59,7 @@ public class BSTree<E extends Comparable<E>> {
 	}
 
 	private Node find(Node n, Node localRoot){
-		int comp = localRoot.compareTo(n);
+		int comp = n.compareTo(localRoot);
 		if(comp<0){
 			if(localRoot.left==null) return localRoot;
 			return find(n, localRoot.left);	
