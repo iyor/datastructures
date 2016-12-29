@@ -1,5 +1,7 @@
 com/iyor/basics/LinkedList.class
+com/iyor/trees/BSTree$Node.class
 com/iyor/basics/Queue$Node.class
+com/iyor/trees/BSTree.class
 com/iyor/basics/Stack.class
 com/iyor/basics/LinkedList$Node.class
 com/iyor/basics/Stack$Node.class
