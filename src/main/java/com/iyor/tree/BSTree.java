@@ -25,33 +25,33 @@ public class BSTree<E extends Comparable<E>> {
 		this.root = null;
 	}
 
-	public boolean add(E e){
+	public void add(E e){
 		Node n = new Node(e);
 		if(root==null){
 			root = n;	
-			return true;
+			return;
 		}
-		return add(n, root);
+		add(n, root);
 	}
 
-	private boolean add(Node n, Node localRoot) {
+	private void add(Node n, Node localRoot) {
 		int comp = n.compareTo(localRoot);
 		if(comp>0){
 			if(localRoot.right==null) {
 				localRoot.right = n;
-				return true;
+				return;
 			}
-			return add(n, localRoot.right);
+			add(n, localRoot.right);
 		}
 		else if (comp<0) {
 			if(localRoot.left==null) {
 				localRoot.left = n;
-				return true;
+				return;
 			}
-			return add(n, localRoot.left);
+			add(n, localRoot.left);
 		}
 		else
-			return false;
+			return;
 	}
 
 	public void remove(E e) {
