@@ -56,6 +56,15 @@ public class BSTreeTest {
 	}
 
 	@Test
+	public void removeNonExistantEltTest() {
+		bst.remove(8);
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
+	@Test
 	public void removeRootTest() {
 		bst.remove(4);
 
