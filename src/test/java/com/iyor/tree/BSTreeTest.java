@@ -54,4 +54,15 @@ public class BSTreeTest {
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
 	}
+
+	@Test
+	public void removeRootTest() {
+		bst.remove(4);
+
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(3,2,1,6,5,7));
+		
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
 }

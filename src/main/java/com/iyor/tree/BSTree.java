@@ -54,9 +54,50 @@ public class BSTree<E extends Comparable<E>> {
 			return false;
 	}
 
-	public boolean remove(E e){
-		return false;
+	public void remove(E e) {
+		if(root==null){
+			return;
+		}
+		Node n = new Node(e);
+		this.root = remove(n, root);
 	} 
+
+	private Node remove(Node n, Node localRoot) {
+		int comp = n.compareTo(localRoot);
+		if(comp>0){
+			if(localRoot.right==null) {
+				return localRoot;
+			}
+			localRoot.right = remove(n, localRoot.right);
+			return localRoot.right;	
+		}
+		else if (comp<0) {
+			if(localRoot.left==null) {
+				return localRoot;
+			}
+			localRoot.left = remove(n, localRoot.left);
+			return localRoot.left;
+		}
+		else {
+			if(localRoot.left!=null && localRoot.right!=null) {
+				Node rightMostLeftChild = findRightMostChild(localRoot.left);
+				rightMostLeftChild.right = localRoot.right;
+				return rightMostLeftChild;
+			}	
+			else if(localRoot.left==null) {
+				return localRoot.right;	
+			}
+			else {
+				return localRoot.left;	
+			}
+		}
+	}
+
+	private Node findRightMostChild(Node n) {
+		if(n.right==null)
+			return n;
+		return findRightMostChild(n.right);
+	}
 
 	public boolean contains(E e) {
 		Node n = new Node(e);
@@ -96,5 +137,4 @@ public class BSTree<E extends Comparable<E>> {
 		traversePreOrder(n.left, elts);
 		traversePreOrder(n.right, elts);
 	}
-
 }
