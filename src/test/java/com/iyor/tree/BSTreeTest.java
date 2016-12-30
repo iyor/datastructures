@@ -115,4 +115,10 @@ public class BSTreeTest {
 		assertTrue(expected.equals(result));
 	}
 
+	@Test 
+	public void nullTreeTest() {
+		BSTree<Integer> bst = new BSTree<Integer>();
+		assertFalse(bst.contains(3));	
+		bst.remove(20);
+	}
 }
