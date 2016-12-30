@@ -31,43 +31,57 @@ public class BSTree<E extends Comparable<E>> {
 			root = n;	
 			return true;
 		}
-		Node leaf = find(n, root);	
-		int comp = n.compareTo(leaf);
-		if(comp==0) return false;
-		else if(comp<0) leaf.left = n;     
-		else if (comp>0) leaf.right = n;
-		return true;
+		return add(n, root);
+	}
+
+	private boolean add(Node n, Node localRoot) {
+		int comp = n.compareTo(localRoot);
+		if(comp>0){
+			if(localRoot.right==null) {
+				localRoot.right = n;
+				return true;
+			}
+			return add(n, localRoot.right);
+		}
+		else if (comp<0) {
+			if(localRoot.left==null) {
+				localRoot.left = n;
+				return true;
+			}
+			return add(n, localRoot.left);
+		}
+		else
+			return false;
 	}
 
 	public boolean remove(E e){
-		//TODO finish method
 		return false;
 	} 
 
-	public boolean contains(E e){
+	public boolean contains(E e) {
 		Node n = new Node(e);
 		if(root==null){
 			return false;
 		}
-		Node candidate = find(n, root);
-		int comp = n.compareTo(candidate);
-		if(comp==0) return true;
-		return false;
+		return contains(n, root);
 	}
 
-	private Node find(Node n, Node localRoot){
+	private boolean contains(Node n, Node localRoot) {
 		int comp = n.compareTo(localRoot);
-		if(comp<0){
-			if(localRoot.left==null) return localRoot;
-			return find(n, localRoot.left);	
+		if(comp>0){
+			if(localRoot.right==null) {
+				return false;
+			}
+			return contains(n, localRoot.right);
 		}
-		else if(comp>0){
-			if(localRoot.right==null) return localRoot;
-			return find(n, localRoot.right);
+		else if (comp<0) {
+			if(localRoot.left==null) {
+				return false;
+			}
+			return contains(n, localRoot.left);
 		}
-		else {
-			return localRoot;			
-		}
+		else
+			return true;
 	}
 
 	public ArrayList<E> traversePreOrder(){
