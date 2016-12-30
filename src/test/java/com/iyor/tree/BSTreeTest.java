@@ -15,31 +15,31 @@ public class BSTreeTest {
 	@Before
 	public void testInit() {
 		bst = new BSTree<Integer>();
-		bst.add(4);
-		bst.add(2);
-		bst.add(1);
-		bst.add(3);
-		bst.add(6);
-		bst.add(5);
-		bst.add(7);
+		bst.add(40);
+		bst.add(20);
+		bst.add(10);
+		bst.add(30);
+		bst.add(60);
+		bst.add(50);
+		bst.add(70);
 	}
 
 	@Test
 	public void containsTest() {
-		assertTrue(bst.contains(4));	
-		assertTrue(bst.contains(2));	
-		assertTrue(bst.contains(1));	
-		assertTrue(bst.contains(3));	
-		assertTrue(bst.contains(6));	
-		assertTrue(bst.contains(5));	
-		assertTrue(bst.contains(7));	
+		assertTrue(bst.contains(40));	
+		assertTrue(bst.contains(20));	
+		assertTrue(bst.contains(10));	
+		assertTrue(bst.contains(30));	
+		assertTrue(bst.contains(60));	
+		assertTrue(bst.contains(50));	
+		assertTrue(bst.contains(70));	
 		assertFalse(bst.contains(0));
 	}
 
 	@Test
 	public void traversePreOrderTest(){
 		ArrayList<Integer> expected = new ArrayList<Integer>();
-		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		expected.addAll(Arrays.asList(40,20,10,30,60,50,70));
 		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
@@ -47,9 +47,9 @@ public class BSTreeTest {
 
 	@Test
 	public void addDuplicate() {
-		bst.add(6);	
+		bst.add(60);	
 		ArrayList<Integer> expected = new ArrayList<Integer>();
-		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		expected.addAll(Arrays.asList(40,20,10,30,60,50,70));
 		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
@@ -57,21 +57,42 @@ public class BSTreeTest {
 
 	@Test
 	public void removeNonExistantEltTest() {
-		bst.remove(8);
+		bst.remove(80);
 		ArrayList<Integer> expected = new ArrayList<Integer>();
-		expected.addAll(Arrays.asList(4,2,1,3,6,5,7));
+		expected.addAll(Arrays.asList(40,20,10,30,60,50,70));
+
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
+
+	@Test
+	public void removeLeafTest() {
+		bst.remove(10);
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(40,20,30,60,50,70));
 		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
 	}
+
 	@Test
 	public void removeRootTest() {
-		bst.remove(4);
-
+		bst.remove(40);
 		ArrayList<Integer> expected = new ArrayList<Integer>();
-		expected.addAll(Arrays.asList(3,2,1,6,5,7));
+		expected.addAll(Arrays.asList(30,20,10,60,50,70));
 		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
 	}
+
+	@Test
+	public void removeDepth1ElementTest() {
+		bst.remove(20);	
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(40,10,30,60,50,70));
+		
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
+
 }

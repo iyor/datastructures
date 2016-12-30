@@ -76,30 +76,34 @@ public class BSTree<E extends Comparable<E>> {
 			return localRoot;
 		}
 		else {
-			if(localRoot.left!=null && localRoot.right!=null) {
-				Node largestLeftChild = findLargestChild(localRoot.left);
-				largestLeftChild.right = localRoot.right;
-				largestLeftChild.left = localRoot.left; 
-				return largestLeftChild;
-			}	
-			else if(localRoot.left==null) {
-				return localRoot;	
-			}
+			if(localRoot.left==null)
+				return localRoot.right;
+			else if (localRoot.right==null)
+				return localRoot.left;
 			else {
-				return localRoot;	
+				if(localRoot.left.right==null) {
+					localRoot.elt = localRoot.left.elt;
+					localRoot.left=localRoot.left.left;
+					return localRoot;
+				}
+				else {
+					Node largestLeftChild = retrieveLargestChild(localRoot.left);
+					largestLeftChild.left = localRoot.left;
+					largestLeftChild.right = localRoot.right;
+					localRoot = largestLeftChild;
+					return localRoot;
+				}
 			}
 		}
 	}
 
-	private Node findLargestChild(Node n) {
-		if(n.right==null)
-			return n;
+	private Node retrieveLargestChild(Node n) {
 		if(n.right.right==null){
 			Node largestChild = n.right;
-			n.right = null;
+			n.right = n.right.left;
 			return largestChild;
 		}
-		return findLargestChild(n.right);
+		return retrieveLargestChild(n.right);
 	}
 
 	public boolean contains(E e) {
