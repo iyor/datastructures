@@ -86,10 +86,30 @@ public class BSTreeTest {
 	}
 
 	@Test
-	public void removeDepth1ElementTest() {
+	public void removeDepth1EltTest() {
 		bst.remove(20);	
 		ArrayList<Integer> expected = new ArrayList<Integer>();
 		expected.addAll(Arrays.asList(40,10,30,60,50,70));
+		
+		ArrayList<Integer> result = bst.traversePreOrder();
+		assertTrue(expected.equals(result));
+	}
+
+	@Test
+	public void removeDepth2EltTest() {
+		bst.add(5);
+		bst.add(15);
+		bst.add(25);
+		bst.add(35);
+		bst.add(45);
+		bst.add(55);
+		bst.add(65);
+		bst.add(75);
+
+		bst.remove(60);
+
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.addAll(Arrays.asList(40,20,10,5,15,30,25,35,55,50,45,70,65,75));
 		
 		ArrayList<Integer> result = bst.traversePreOrder();
 		assertTrue(expected.equals(result));
