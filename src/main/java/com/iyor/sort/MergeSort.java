@@ -19,7 +19,7 @@ public class MergeSort {
 		return merge(sort(l), sort(r));
 	}
 
-	public static <T extends Comparable<T>> T[] merge(T[] a, T[] b){
+	private static <T extends Comparable<T>> T[] merge(T[] a, T[] b){
 		T[] out = (T[]) (new Object[a.length + b.length]);
 		int aIndex = 0;
 		int bIndex = 0;
