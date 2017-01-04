@@ -2,15 +2,15 @@ package com.iyor.sort;
 
 public class MergeSort {
 
-	public static <T extends Comparable<T>> T[]  sort(T[] arr){
+	public static <T extends Comparable<? super T>> T[]  sort(T[] arr){
 		if(arr.length==1)
 			return arr;
 		boolean oddLength = arr.length%2!=0;
 		int lengthL = arr.length/2;
 		int lengthR = lengthL + (oddLength?1:0);
 
-		T[] l = (T[]) (new Object[lengthL]);
-		T[] r = (T[]) (new Object[lengthR]);
+		T[] l = (T[]) (new Comparable[lengthL]);
+		T[] r = (T[]) (new Comparable[lengthR]);
 
 		for(int i=0; i < lengthL; i++){
 			l[i] = arr[i];
@@ -21,8 +21,8 @@ public class MergeSort {
 		return merge(sort(l), sort(r));
 	}
 
-	private static <T extends Comparable<T>> T[] merge(T[] a, T[] b){
-		T[] out = (T[]) (new Object[a.length + b.length]);
+	private static <T extends Comparable<? super T>> T[] merge(T[] a, T[] b){
+		T[] out = (T[]) (new Comparable[a.length + b.length]);
 		int aIndex = 0;
 		int bIndex = 0;
 		int outIndex = 0;
@@ -54,5 +54,3 @@ public class MergeSort {
 		return out;	
 	}
 }
-
-	

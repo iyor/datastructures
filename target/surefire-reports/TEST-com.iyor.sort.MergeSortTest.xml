@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.iyor.sort.MergeSortTest" time="0.002" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="com.iyor.sort.MergeSortTest" time="0.016" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib"/>
@@ -63,10 +63,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.iyor.sort.MergeSortTest" name="mergeSortTest" time="0.002">
-    <error message="[Ljava.lang.Object; cannot be cast to [Ljava.lang.Comparable;" type="java.lang.ClassCastException">java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Comparable;
-	at com.iyor.sort.MergeSort.sort(MergeSort.java:12)
-	at com.iyor.sort.MergeSortTest.mergeSortTest(MergeSortTest.java:21)
+  <testcase classname="com.iyor.sort.MergeSortTest" name="singleElementTest" time="0.016">
+    <error message="[Ljava.lang.Comparable; cannot be cast to [Ljava.lang.Integer;" type="java.lang.ClassCastException">java.lang.ClassCastException: [Ljava.lang.Comparable; cannot be cast to [Ljava.lang.Integer;
+	at com.iyor.sort.MergeSortTest.singleElementTest(MergeSortTest.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

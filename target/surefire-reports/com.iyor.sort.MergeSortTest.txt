@@ -1,11 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: com.iyor.sort.MergeSortTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE!
-mergeSortTest(com.iyor.sort.MergeSortTest)  Time elapsed: 0.002 sec  <<< ERROR!
-java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Comparable;
-	at com.iyor.sort.MergeSort.sort(MergeSort.java:12)
-	at com.iyor.sort.MergeSortTest.mergeSortTest(MergeSortTest.java:21)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.022 sec <<< FAILURE!
+singleElementTest(com.iyor.sort.MergeSortTest)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.ClassCastException: [Ljava.lang.Comparable; cannot be cast to [Ljava.lang.Integer;
+	at com.iyor.sort.MergeSortTest.singleElementTest(MergeSortTest.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
