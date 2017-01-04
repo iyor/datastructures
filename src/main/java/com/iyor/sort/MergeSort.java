@@ -1,3 +1,5 @@
+package com.iyor.sort;
+
 public class MergeSort {
 
 	public static <T extends Comparable<T>> T[]  sort(T[] arr){
