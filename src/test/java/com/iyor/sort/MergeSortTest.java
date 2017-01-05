@@ -10,7 +10,7 @@ public class MergeSortTest {
 
 	@Test
 	public void singleElementTest() {
-		Integer[] arr = new Integer[] {2};	
+		Integer[] arr = {2};	
 		Integer[] sorted = MergeSort.sort(arr);
 		Integer[] expected = {2};
 		assertTrue(Arrays.equals(sorted, expected));
@@ -18,7 +18,7 @@ public class MergeSortTest {
 
 	@Test
 	public void simpleSortTest() {
-		Integer[] arr = new Integer[] {3,2};	
+		Integer[] arr = {3,2};	
 		Integer[] sorted = MergeSort.sort(arr);
 		Integer[] expected = {2,3};
 		assertTrue(Arrays.equals(sorted, expected));
@@ -26,7 +26,7 @@ public class MergeSortTest {
 
 	@Test
 	public void oddLengthArrayTest() {
-		Integer[] arr = new Integer[] {3,2,6};	
+		Integer[] arr = {3,2,6};	
 		Integer[] sorted = MergeSort.sort(arr);
 		Integer[] expected = {2,3,6};
 		assertTrue(Arrays.equals(sorted, expected));
@@ -34,7 +34,7 @@ public class MergeSortTest {
 
 	@Test
 	public void mergeSortTest() {
-		Integer[] arr = new Integer[] {3,2,6,8,4,6,5,3,10,3,11,-2,123,123};	
+		Integer[] arr = {3,2,6,8,4,6,5,3,10,3,11,-2,123,123};	
 		Integer[] sorted = MergeSort.sort(arr);
 		Integer[] expected = {-2, 2, 3, 3, 3, 4, 5, 6, 6, 8, 10, 11, 123, 123};
 		assertTrue(Arrays.equals(sorted, expected));
