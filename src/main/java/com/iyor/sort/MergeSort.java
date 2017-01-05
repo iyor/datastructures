@@ -12,7 +12,7 @@ public class MergeSort {
 		int lengthR = lengthL + (oddLength?1:0);
 
 		T[] l = (T[]) Array.newInstance(arr.getClass().getComponentType(), lengthL);
-		T[] r = (T[]) Array.newInstance(arr.getClass().getComponentType(), lengthL);
+		T[] r = (T[]) Array.newInstance(arr.getClass().getComponentType(), lengthR);
 
 		for(int i=0; i < lengthL; i++){
 			l[i] = arr[i];
@@ -30,7 +30,7 @@ public class MergeSort {
 		int outIndex = 0;
 
 		while(aIndex<a.length && bIndex<b.length){
-			if(a[aIndex].compareTo(b[bIndex])>0){
+			if(a[aIndex].compareTo(b[bIndex])<0){
 				out[outIndex] = a[aIndex];
 				aIndex++;
 			}
