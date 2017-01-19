@@ -2,11 +2,8 @@ package com.iyor.sort;
 
 public class QuickSort {
 
-	public static void printsomething() {
-		System.out.println("POPOPOPO");
-	}
 	public static <T extends Comparable<? super T>> void sort(T[] arr) {
-		sort(arr, 0, arr.length);
+		sort(arr, 0, arr.length-1);
 	}
 
 	private static <T extends Comparable<? super T>> void sort(T[] arr, int low, int high) {
