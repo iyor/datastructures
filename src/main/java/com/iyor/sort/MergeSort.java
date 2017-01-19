@@ -40,13 +40,13 @@ public class MergeSort {
 			}
 			outIndex++;
 		}
-		if(aIndex==a.length-1){
+		if(aIndex<a.length){
 			for(int i=aIndex; i<a.length; i++){
 				out[outIndex] = a[i];
 				outIndex++;
 			}
 		}
-		else{
+		else if (bIndex<b.length){
 			for(int i=bIndex; i<b.length; i++){
 				out[outIndex] = b[i];
 				outIndex++;
