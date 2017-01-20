@@ -1,6 +1,7 @@
-com/iyor/basics/QueueTest.class
 com/iyor/sort/MergeSortTest.class
+com/iyor/basics/ArrayListTest.class
 com/iyor/basics/LinkedListTest.class
+com/iyor/trees/BSTreeTest.class
+com/iyor/basics/QueueTest.class
 com/iyor/basics/StackTest.class
 com/iyor/sort/QuickSortTest.class
-com/iyor/trees/BSTreeTest.class

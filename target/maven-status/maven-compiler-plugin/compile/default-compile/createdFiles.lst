@@ -1,4 +1,5 @@
 com/iyor/basics/LinkedList.class
+com/iyor/basics/ArrayList.class
 com/iyor/sort/QuickSort.class
 com/iyor/trees/BSTree$Node.class
 com/iyor/basics/Queue$Node.class
