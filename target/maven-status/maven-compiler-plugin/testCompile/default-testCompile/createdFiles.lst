@@ -5,3 +5,4 @@ com/iyor/trees/BSTreeTest.class
 com/iyor/basics/QueueTest.class
 com/iyor/basics/StackTest.class
 com/iyor/sort/QuickSortTest.class
+com/iyor/trees/HeapTest.class

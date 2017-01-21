@@ -74,10 +74,36 @@ public class ArrayListTest {
 	}
 
 	@Test
-	public void addToInvokeReallocation() {
+	public void addToInvokeReallocationTest() {
 		for(int i = 0; i<100; i++)	
 			al.add(i);
 		assertTrue(104==al.size());
+	}
+
+	@Test
+	public void getTest() {
+		assertTrue(1==al.get(0));
+	}
+
+	@Test
+	public void setTest() {
+		al.set(0, 15);
+		assertTrue(15==al.get(0));
+	}
+
+	@Test
+	public void getOutOfBoundsTest() {
+		assertNull(al.get(5));	
+	}
+
+	@Test
+	public void setOutOfBoundsTest(){
+		al.set(5, 15);
+		assertTrue(al.contains(1));
+		assertTrue(al.contains(2));
+		assertTrue(al.contains(3));
+		assertTrue(al.contains(4));
+		assertFalse(al.contains(15));
 	}
 
 }
