@@ -11,12 +11,10 @@ public class Heap<E extends Comparable<E>> {
 	}
 
 	public boolean remove(E e) {
-	
 		return true;				
 	}
 
 	public boolean contains(E e) {
-	
 		return true;				
 	}
 }
