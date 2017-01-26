@@ -16,7 +16,14 @@ public class Heap<E extends Comparable<E>> {
 	}
 
 	public boolean remove(E e) {
-		return true;				
+		int idx = findIndex(e);
+		if (idx < 0) {
+			return false;
+		}
+		data.set(idx, data.get(data.size()));
+		data.set(data.size(), null);
+		reposition(idx);
+		return true;
 	}
 
 	public boolean contains(E e) {
@@ -25,9 +32,9 @@ public class Heap<E extends Comparable<E>> {
 
 	private void reposition(int index) {
 		int parentIdx = findParent(index);
-		E parentElt = data.get(findParent(index));
+		E parentElt = data.get(parentIdx);
 		E childElt = data.get(index);
-		if (childElt.compareTo(parentElt)<0) {
+		if (childElt.compareTo(parentElt) < 0) {
 			return;
 		}
 		data.set(parentIdx, childElt);
@@ -38,5 +45,15 @@ public class Heap<E extends Comparable<E>> {
 	private int findParent(int childIdx) {
 		int parentIdx = (childIdx-1)/2;
 		return parentIdx >= 0 ? parentIdx : 0;	
+	}
+
+	//Method is public solely for testing purposes
+	public int findIndex(E elt) {
+		for(int i = 0; i<data.size(); i++) {
+			if (data.get(i).equals(elt)) {
+				return i;
+			}
+		}
+		return -1;
 	}
 }

@@ -15,22 +15,21 @@ public class HeapTest {
 	@Before
 	public void testInit() {
 		h = new Heap<Integer>();
-	}
-
-	@Test
-	public void addSingleTest() {
-		h.add(1);
-		assertTrue(h.contains(1));
-	}
-
-	@Test
-	public void addMultipleElementsTest() {
 		h.add(3);
 		h.add(1);
 		h.add(2);
+	}
+
+
+	@Test
+	public void baseTest() {
 		assertTrue(h.contains(1));
 		assertTrue(h.contains(2));
 		assertTrue(h.contains(3));
+		assertEquals(0, h.findIndex(3));
+		assertEquals(1, h.findIndex(1));
+		assertEquals(2, h.findIndex(2));
+
 	}
 
 }
