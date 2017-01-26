@@ -8,8 +8,10 @@ public class Heap<E extends Comparable<E>> {
 
 	public boolean add(E e) {
 		data.add(e);
-		int currentIdx = data.size();
-		reposition(currentIdx);
+		int currentIdx = data.size() - 1;
+		if (currentIdx > 1) {
+			reposition(currentIdx);
+		}
 		return true;				
 	}
 
@@ -18,21 +20,23 @@ public class Heap<E extends Comparable<E>> {
 	}
 
 	public boolean contains(E e) {
-		return true;				
+		return data.contains(e);
 	}
 
 	private void reposition(int index) {
-		int parent = findParent(index);
-		if (data.get(index).compareTo(data.get(parent))>0) {
+		int parentIdx = findParent(index);
+		E parentElt = data.get(findParent(index));
+		E childElt = data.get(index);
+		if (childElt.compareTo(parentElt)<0) {
 			return;
 		}
-		E temp = data.get(parent);
-		data.set(parent, data.get(index));
-		data.set(index, temp);
-		reposition(parent);
+		data.set(parentIdx, childElt);
+		data.set(index, parentElt);
+		reposition(parentIdx);
 	}
 
 	private int findParent(int childIdx) {
-		return (childIdx-1)/2;	
+		int parentIdx = (childIdx-1)/2;
+		return parentIdx >= 0 ? parentIdx : 0;	
 	}
 }
