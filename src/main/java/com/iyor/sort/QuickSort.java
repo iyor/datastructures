@@ -13,7 +13,7 @@ public class QuickSort {
 		swap(arr, middle, high);
 		int pivotIdx = high;
 		middle = partition(arr, low, high, pivotIdx);
-		swap(arr, middle, high); // Return the pivot index to it's proper place
+		swap(arr, middle, high); // Return the pivot index to its proper place
 		sort(arr, low, middle-1);
 		sort(arr, middle + 1, high);
 	}
